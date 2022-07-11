@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Xdmf Version="3.0">
+  <Domain>
+    <Grid Name="mesh" GridType="Uniform">
+      <Topology NumberOfElements="25600" TopologyType="Triangle" NodesPerElement="3">
+        <DataItem Dimensions="25600 3" NumberType="UInt" Format="HDF">v=1.0e-06_T.h5:/Mesh/mesh/topology</DataItem>
+      </Topology>
+      <Geometry GeometryType="XY">
+        <DataItem Dimensions="12961 2" Format="HDF">v=1.0e-06_T.h5:/Mesh/mesh/geometry</DataItem>
+      </Geometry>
+      <Attribute Name="f_32-0-0-0-0-2" AttributeType="Scalar" Center="Node">
+        <DataItem Dimensions="12961 1" Format="HDF">v=1.0e-06_T.h5:/VisualisationVector/0</DataItem>
+      </Attribute>
+    </Grid>
+  </Domain>
+</Xdmf>
