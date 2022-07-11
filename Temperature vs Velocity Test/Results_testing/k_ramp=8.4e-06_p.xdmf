@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Xdmf Version="3.0">
+  <Domain>
+    <Grid Name="mesh" GridType="Uniform">
+      <Topology NumberOfElements="28224" TopologyType="Triangle" NodesPerElement="3">
+        <DataItem Dimensions="28224 3" NumberType="UInt" Format="HDF">k_ramp=8.4e-06_p.h5:/Mesh/mesh/topology</DataItem>
+      </Topology>
+      <Geometry GeometryType="XY">
+        <DataItem Dimensions="14281 2" Format="HDF">k_ramp=8.4e-06_p.h5:/Mesh/mesh/geometry</DataItem>
+      </Geometry>
+      <Attribute Name="f_32-0-0-0-0-0-0-1" AttributeType="Scalar" Center="Node">
+        <DataItem Dimensions="14281 1" Format="HDF">k_ramp=8.4e-06_p.h5:/VisualisationVector/0</DataItem>
+      </Attribute>
+    </Grid>
+  </Domain>
+</Xdmf>
