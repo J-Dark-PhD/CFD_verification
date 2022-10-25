@@ -18,7 +18,7 @@ docker run -ti -v ${PWD}:/home/fenics/shared --name cfd_verification quay.io/fen
 
 ## Lid driven cavity
 
-Insert photo here
+![Lid driven cavity](LDC_problem.png)
 
 The lid driven cavity is a simple cfd solver test case in which the top side of a cavity is given an imposed velocity condition, the location of the vorticies produced can be compared to a reference solution, in this case the reference paper is:
 
@@ -28,7 +28,7 @@ The lid driven cavity is a simple cfd solver test case in which the top side of 
 
 ## Heat driven cavity
 
-Insert photo here
+![Heat Driven Cavity](HDC_problem.png)
 
 The heat driven cavity is a simple cfd solver test case in which the left and right side of a cavity is given imposed temperature conditions, velocity, temperature and pressure fields produced can be compared to a reference solution, in this case the reference paper is:
 
