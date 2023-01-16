@@ -35,7 +35,7 @@ F += - inner(q, div(u)) * dx
 solve(F == 0, func, bcu, solver_parameters={'newton_solver': {'linear_solver': 'mumps'}})
 
 export.assign(func)
-u_export, p_export, phi_export = export.split()
+u_export, p_export = export.split()
 XDMFFile("Results/u.xdmf").write(u_export)
 XDMFFile("Results/p.xdmf").write(p_export)
 
