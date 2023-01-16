@@ -37,10 +37,8 @@ f = Constant((0, 0))
 for top_velocity in [400, 1000, 2000, 4000, 5000, 7000, 9000, 10000]:
 
     up.assign(up_old)
-    rho_0 = 1
-    mu = 1
-    # top_velocity = 1
-    Reynolds = rho_0 * top_velocity / mu
+    nu = 1
+    Reynolds = nu * top_velocity
     print("Running case Re={}".format(Reynolds))
     velocity_x.assign(Constant((top_velocity, 0)))
 
@@ -48,13 +46,13 @@ for top_velocity in [400, 1000, 2000, 4000, 5000, 7000, 9000, 10000]:
 
     # CFD momentum
     F = (
-        rho_0 * inner(grad(u), grad(v)) * dx
+        inner(dot(grad(u), u), v) * dx
         - inner(p, div(v)) * dx
-        + mu * inner(dot(grad(u), u), v) * dx
+        + nu * inner(grad(u), grad(v)) * dx
     )
 
     # CFD continuity
-    F += inner(div(u), q) * dx
+    F -= inner(q, div(u)) * dx
 
     solve(F == 0, up, bcu)
 

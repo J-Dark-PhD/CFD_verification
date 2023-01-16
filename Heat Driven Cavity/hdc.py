@@ -1,6 +1,4 @@
 from fenics import *
-import matplotlib.pyplot as plt
-
 
 N = 120
 M = UnitSquareMesh(N, N)
@@ -41,14 +39,14 @@ for Ra in [1e03, 1e04, 1e05, 1e06, 5e06, 1e07, 5e07, 1e08]:
 
     # CFD momentum
     F = (
-        rho_0 * inner(grad(u), grad(v)) * dx
+        rho_0 * inner(dot(grad(u), u), v) * dx
         - inner(p, div(v)) * dx
-        + mu * inner(dot(grad(u), u), v) * dx
+        + mu * inner(grad(u), grad(v)) * dx
         - (beta * rho_0) * inner((T - T_0) * g, v) * dx
     )
 
     # CFD continuity
-    F += inner(div(u), q) * dx
+    F -= inner(q, div(u)) * dx
 
     # Heat transfer
     F += (
